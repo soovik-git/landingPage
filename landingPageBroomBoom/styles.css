@@ -2,11 +2,22 @@ body{
     margin: 0;
     background-color: #f5f5f6;
     font-family: 'Noto Sans', sans-serif !important;
+
+}
+body::-webkit-scrollbar{
+    width: 10px;
+   
+}
+body::-webkit-scrollbar-track{
+    background-color: black;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: gold;
 }
 .main-body{
     background-image: url("./public/Rectangle_109_4.webp");
     margin: 0;
-    background-size: cover;
+    background-size: inherit;
 }
 
 /* ===============================header-section=============================== */
@@ -32,16 +43,10 @@ body{
     align-items: center;
 }
 
-.logo-sec a {
-    /* background-color: #fff; */
-    /* width: 5rem;
-    height: 3rem;
-    position: relative;
-    border-radius: 10rem; */
-}
+
 .logo-sec img{
-    height: 75px;
-    width: 95px;
+    height: 78px;
+    width: 113px;
     
 }
 .logo-sec h2{
@@ -62,12 +67,15 @@ body{
 .right-nav-sec div{
     text-decoration: none;
     color: black;
-    padding: 11px 30px;
+    padding: 11px 9px;
     background-color: #fff;
     border-radius: 10rem;
     font-size: 11px;
     font-weight: 100;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 2px;
 }
 .right-nav-sec div h2{
     margin: 0;
@@ -75,19 +83,23 @@ body{
 .right-nav-sec div:nth-child(2) {
    margin-left: 10px;
   }
-
+@media screen and (max-width: 600px) {
+    .nav-bar{
+        padding: 1rem 1rem 0 1rem;
+    }
+}
 
 /* ================================banner section ================================ */
 .banner-section{
     background-color: transparent;
     position: relative;
-    margin-top: 3rem;
+    /* margin-top: 0.5rem; */
     width: 100%;
-    padding-bottom: 5rem;
+    padding-bottom: 1rem;
 }
 
 .banner-heading{
-    margin: 0;
+    margin: -20px 0 0 0;
     position: relative;
     display: flex;
     justify-content: center;
@@ -101,20 +113,43 @@ body{
     line-height: 88px;
     max-width: 1150px;
     font-weight: 600;
-    margin-bottom: 32px;
+    margin: 31px 0 -7px 0;
     color: gold;
 }
+
 .banner-heading span, div{
  color: #fff;
 }
 .banner-heading div{
-    margin-top: 56px;
-    margin-bottom: 56px;
+    margin-top: 45px;
+    margin-bottom: 43px;
     max-width: 920px;
     font-weight: 600;
     font-size: 20px;
     line-height: 24px;
     font-family: 'Noto Sans', sans-serif;
+}
+@media screen and (max-width: 1130px) {
+    .banner-heading h1{
+        font-size: 70px;
+    line-height: 70px;
+    font-weight: 600;
+    }
+    .banner-heading{
+        padding: 0 3rem 0 3rem;
+    }
+    .banner-heading  div{
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+}
+@media screen and (max-width: 661px) {
+    .banner-heading h1{
+        font-size: 50px;
+    line-height: 70px;
+    font-weight: 600;
+    }
 }
                   /* -----------------------.form-sec-area-------------- */
                   .form-sec-area{
@@ -148,11 +183,11 @@ body{
 
 .form-radio-btns{
  display: flex;
- justify-content: flex-start !important;
+ justify-content: center !important;
  color: #ffcb13;
- gap: 10px;
- font-size: 1.5rem;
- font-weight: 600;
+ gap: 15px;
+ font-size: 1.7rem;
+ font-weight: 700;
 }
 .form-radio-btns input[type="radio"]{
     width: 20px;
@@ -160,7 +195,7 @@ body{
 }
 .form-radio-btns input[type="radio"]:checked {
     accent-color: white;
-    border: 10px solid black;
+    border: 50px solid black;
     width: 20px;
   height: 20px;
     border-radius: 50%;
@@ -171,6 +206,8 @@ body{
     display: flex;
     gap: 10px;
     position: relative;
+    justify-content: center;
+    flex-wrap: wrap;
     padding:  10px 0 30px 0;
 }
 .form-inputs-group div{
@@ -178,12 +215,21 @@ body{
     height: 56px;
     display: flex;
     align-items: center;
-    padding: 5px 0 5px 10px;
+    padding: 5px 10px 5px 10px;
     background-color:  #f5f5f6;
     border-radius: 0.7rem;
 }
-.form-inputs-group button{
-    padding: 5px 0;
+.form-inputs-group div:focus{
+    border: 2px solid gold;
+}
+.form-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-btn button{
+    padding: 15px 10px;
     width: 10rem;
     color: black;
     background-color: gold;
@@ -197,11 +243,48 @@ body{
     background-color: transparent;
     height: inherit;
     font-size: large;
+    width: inherit;
+}
+.form-inputs-group select{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    height: inherit;
+    font-size: large;
+    width: inherit;
 }
 
-.form-inputs-group input::placeholder {
+/* .form-inputs-group input::placeholder {
     text-indent: 10px;
+  } */
+
+  @media screen and (max-width: 653px) {
+    .form-sec-area{
+        padding: 0;
+    }
+    .form-body{
+          box-shadow: 0 1.5px 8.9px rgba(50,57,66,.08);
+          margin-bottom: -34px;
+          
+    }
+    .form-inputs-group div{
+        width: 100%;
+    }
+    .banner-section{
+        padding-bottom: 0px;
+       
+    }
+    .why-us{
+        margin-top: 2rem;
+    }
+    
   }
+  @media screen and (max-width: 520px) {
+    .form-btn button{
+        width: 100%;
+    }
+  }
+
 
 
 /* ================================banner section ends ================================ */
@@ -228,6 +311,7 @@ body{
     position: relative;
     max-width: 1400px;
     display: flex;
+    justify-content: center;
 }
 .our-offer-headings h1{
     font-size: 70px;
@@ -236,13 +320,17 @@ body{
     font-weight: 600;
     margin-bottom: 32px;
     color: gold;
-    text-align: left;
+    text-align: center;
 }
+
+
 .service-cards{
     display: flex;
     margin-top: 80px;
     width: 100%;
+    
 }
+
 
 .cards{
   flex-grow: 1;
@@ -266,11 +354,29 @@ body{
 }
 .cards h3{
     color: black;
+    text-align: left;
 }
 
 .cards p{
     color: black;
+    text-align: left;
 }
+@media screen and (max-width: 1105px){
+    .service-cards{
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+}
+@media screen and (max-width: 653px) {
+    .fst-h{
+         font-size: 50px  !important;
+         line-height: 65px  !important;
+         text-align: center !important ; 
+    }
+    .service-cards{
+     margin-top: 1rem !important;
+    }
+ }
 
 /*----------------------------------------why safe sec ------------------------------------------*/
 .why-safe{
@@ -301,6 +407,20 @@ body{
     color: black;
 }
 
+.why-safe h1, p{
+    text-align: center;
+}
+@media screen and (max-width: 653px) {
+    .snd-h{
+         font-size: 50px  !important;
+         line-height: 65px  !important;
+         text-align: center !important ; 
+    }
+    .why-safe .content-body{
+        width: 100%;
+    }
+   
+ }
 /*---------------------------------------------- .how-work ----------------------------------------------*/
 .how-work{
     position: relative;
@@ -310,12 +430,45 @@ body{
     margin-bottom: 10rem;   
 }
 
+.how-work .content-body{
+    display: flex;
+    justify-content: center;
+}
+
 .how-work-content{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+}
+@media screen and (max-width: 1336px) {
+    .how-work-content{
+        gap: 40px;
+        flex-wrap: wrap;
+    } 
+   
+    .c-text-cont p{
+      text-align: left;
+    }
+    .text-cont-lst div{
+       width: 2rem !important; 
+    }
+}
+@media screen and (max-width: 934px) {
+    .c-text-cont p{
+        font-size: 1rem !important;
+    font-weight: 600;
+      }
+      .c-text-cont p span{
+        font-size: 1rem !important;
+    font-weight: 600;
+      }
+
 }
 
+.trd-h{
+    text-align: center !important;
+}
 .hw-cards-body{
     position: relative;
     z-index: 11;
@@ -325,7 +478,7 @@ body{
 .hw-cards{
     position: relative;
     max-width: 794px;
-    width: 100%;
+    width: fit-content;
     background: #fff;
     color: gold;
     box-shadow: 0 1.5px 8.9px rgba(50,57,66,.08);
@@ -428,6 +581,29 @@ body{
    color: white;
    font-size: small;
 }
+@media screen and (max-width: 653px) {
+    .trd-h{
+         font-size: 50px  !important;
+         line-height: 65px  !important;
+         text-align: center !important ; 
+    }
+    .right-bottom-cont{
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+        margin-top: 20px;
+        justify-content: center;
+    }
+ }
+
+ @media screen and (max-width: 800px) {
+   .img-container{
+    display: none;
+   }
+   .left-c{
+    margin-right: 10px !important;
+    }
+ }
 
 
                 /* -------------------------hw-cards-right ------------------------------------------------*/
@@ -437,6 +613,7 @@ body{
     flex-direction: column;
     gap: 40px;
 }
+
 .c-text-cont{
     display: flex;
     gap: 10px;
@@ -460,7 +637,7 @@ body{
     font-size: 1.3rem;
     font-weight: 600; 
 }
-  
+.
 
 /*---------------------------------------------- .download-r-app ----------------------------------------------*/
 
@@ -471,6 +648,17 @@ body{
     transition: all .3s; 
     margin-bottom: 10rem;  
 }
+.download-r-app .content-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.down-sec-left h1, p{
+ text-align: center;
+}
+
 
 .down-sec-left button{
     padding: 15px 1rem;
@@ -481,6 +669,8 @@ body{
     border-radius: 1rem;
     font-size: large;
     margin-top: 30px;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 .download-sec-right{
@@ -493,6 +683,7 @@ body{
     border-radius: 48px;
     background: white;
     color: black;
+    box-shadow: 0 1.5px 8.9px rgba(50,57,66,.08);
 }
 
 .download-sec-right p{
@@ -501,8 +692,41 @@ body{
     line-height: 24px;
     margin-bottom: 24px;
 }
+@media screen and (max-width: 1457) {
+    .download-r-app .content-body{
+        flex-direction: column;
+    }
+    .down-sec-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center; /* center any text content */
+        height: 90%;
+        position: relative;
+        margin: 0 10px 0 10px;
+    }
+    
+    .down-sec-left button {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        /* center the button horizontally */
+    }
+    
+}
+@media screen and (max-width: 829px) {
+    .down-sec-left{
+        width: 90% !important;
+    }
+}
 
-
+@media screen and (max-width: 653px){
+.foth-h {
+    font-size: 50px !important;
+    line-height: 65px !important;
+    text-align: center !important;
+}
+}
 /*-------------------------------------------------footer------------------------------------------------------*/
 
 .footer-sec{
@@ -514,27 +738,51 @@ body{
     flex-direction: column;
     gap: 2rem;
 }
-.footer-top{
+.footer-t{
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2.5rem;
 }
-
-.footer-top a img{
-    height: 75px;
-    width: 95px;
-  
-}
-
-.svg-cont{
+.t-sections{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    margin: 0 30px;
-    gap: 10px;
+    justify-content: space-around;
+    gap: 27px;
+}
+.t-sections  p{
+   color: white;
+   font-weight: 600;
+}
+/* .t-sections h3, p{
+ color: white;
+} */
+
+.logo-f-conts, .logo-f-conts-b{
+    display: flex;
+    gap: 20px;
+}
+.logo-f-conts-b{
+    margin-top: -1rem;
+}
+.logo-f-conts img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+.logo-f-conts-b img{
+    height: 50px;
+    width: 150px;
 }
 
-.footer-bottom p{
-  color: white;
+
+
+
+.footer-b p{
+ color: #f5f5f6;
+}
+.footer-b{
+    margin-top: 1rem;
 }
 
